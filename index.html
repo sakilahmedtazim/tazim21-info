@@ -3,29 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini YouTube</title>
+    <title>Professional Mini YouTube</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header>
-        <h1>Mini YouTube</h1>
-        <input type="text" id="searchInput" placeholder="Search videos..." onkeyup="searchVideos()">
+        <div class="logo">
+            <h1>ProTube</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search" onkeyup="searchVideos()">
+            <button>Search</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Subscriptions</a></li>
+                <li><a href="#">Playlists</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- ফিল্টার অপশন -->
+    <div class="filter-options">
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter" onchange="filterVideos()">
+            <option value="all">All</option>
+            <option value="tech">Technology</option>
+            <option value="education">Education</option>
+            <option value="entertainment">Entertainment</option>
+        </select>
+
+        <label for="dateFilter">Sort by:</label>
+        <select id="dateFilter" onchange="sortVideos()">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="popular">Most Popular</option>
+        </select>
+    </div>
+
     <div class="video-list" id="videoList">
-        <div class="video-item">
-            <a href="video.html?video=videos/admin.mp4">
-                <img src="photos/photo.jpg" alt="Video 1" class="thumbnail">
-                <span>Video 1</span>
+        <div class="video-item" data-category="tech" data-popularity="1000">
+            <a href="video.html?video=video1.mp4">
+                <img src="assets/thumb1.jpg" alt="Video 1" class="thumbnail" onmouseover="showPreview(this)">
+                <span>Tech Video 1</span>
             </a>
         </div>
-        <div class="video-item">
-            <a href="video.html?video=videos/zzart.mp4">
-                <img src="photos/photo.jpg" alt="Video 2" class="thumbnail">
-                <span>Video 2</span>
+        <div class="video-item" data-category="education" data-popularity="2000">
+            <a href="video.html?video=video2.mp4">
+                <img src="assets/thumb2.jpg" alt="Video 2" class="thumbnail" onmouseover="showPreview(this)">
+                <span>Education Video 2</span>
             </a>
         </div>
-        <!-- আরো ভিডিও এভাবে যোগ করতে পারেন -->
+        <!-- আরও ভিডিও যোগ করতে পারেন -->
     </div>
 
     <script src="assets/script.js"></script>
