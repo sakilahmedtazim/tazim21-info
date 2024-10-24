@@ -1,19 +1,35 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 h1 {
-    color: #333;
+    margin: 0;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .video-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    padding: 20px;
 }
 
 .video-item {
@@ -22,18 +38,38 @@ h1 {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 200px;
+    text-align: center;
 }
 
 .video-item a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
 }
 
-.video-item a:hover {
-    color: #007BFF;
+.thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
-.video-container {
-    margin-top: 20px;
-      }
+.player-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.rating {
+    text-align: center;
+    margin: 20px;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+}
+
+.star:hover,
+.star.selected {
+    color: gold;
+}
