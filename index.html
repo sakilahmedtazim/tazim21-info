@@ -7,16 +7,27 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>Mini YouTube</h1>
-    <div class="video-list">
-        <!-- ভিডিও তালিকা -->
+    <header>
+        <h1>Mini YouTube</h1>
+        <input type="text" id="searchInput" placeholder="Search videos..." onkeyup="searchVideos()">
+    </header>
+
+    <div class="video-list" id="videoList">
         <div class="video-item">
-            <a href="video.html?video=admin.mp4">Video 1</a>
+            <a href="video.html?video=video1.mp4">
+                <img src="assets/thumb1.jpg" alt="Video 1" class="thumbnail">
+                <span>Video 1</span>
+            </a>
         </div>
         <div class="video-item">
-            <a href="video.html?video=zzart.mp4">Video 2</a>
+            <a href="video.html?video=video2.mp4">
+                <img src="assets/thumb2.jpg" alt="Video 2" class="thumbnail">
+                <span>Video 2</span>
+            </a>
         </div>
         <!-- আরো ভিডিও এভাবে যোগ করতে পারেন -->
     </div>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
