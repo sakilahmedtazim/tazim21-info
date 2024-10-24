@@ -1,75 +1,45 @@
-body {
-    font-family: Arial, sans-serif;
+/* ফিল্টার অপশন স্টাইল */
+.filter-options {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
-header {
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.filter-options label, .filter-options select {
+    margin-right: 10px;
 }
 
-h1 {
-    margin: 0;
-}
-
-input[type="text"] {
-    width: 50%;
-    padding: 10px;
+/* প্রোগ্রেস বার এবং স্পিড কন্ট্রোল */
+.progress-section {
     margin-top: 10px;
 }
 
-.video-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-.video-item {
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 200px;
-    text-align: center;
-}
-
-.video-item a {
-    text-decoration: none;
-    color: #333;
-}
-
-.thumbnail {
+progress {
     width: 100%;
-    height: auto;
+    height: 10px;
+    background-color: #f00;
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.player-container {
-    text-align: center;
-    padding: 20px;
+progress::-webkit-progress-bar {
+    background-color: #ddd;
 }
 
-.rating {
-    text-align: center;
-    margin: 20px;
+progress::-webkit-progress-value {
+    background-color: #f00;
 }
 
-.star {
-    font-size: 30px;
+.video-actions button {
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #f00;
+    color: white;
     cursor: pointer;
-    color: gray;
 }
 
-.star:hover,
-.star.selected {
-    color: gold;
+.video-actions button:hover {
+    background-color: #c00;
 }
