@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <h1>Video Player</h1>
+    <div class="video-container">
+        <!-- ভিডিওটি প্লে করতে JavaScript দিয়ে URL থেকে ভিডিও ফাইল পাথ তুলে নিয়ে দেখানো হবে -->
+        <video id="videoPlayer" width="720" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            আপনার ব্রাউজার ভিডিও প্লে করতে সমর্থ নয়।
+        </video>
+    </div>
+    <br>
+    <a href="index.html">Back to Video List</a>
+
+    <script>
+        // ভিডিও URL থেকে ভিডিও প্যারামিটার নেওয়া এবং সেট করা
+        const urlParams = new URLSearchParams(window.location.search);
+        const video = urlParams.get('video');
+
+        if (video) {
+            const videoSource = document.getElementById('videoSource');
+            videoSource.src = 'videos/' + video; // ভিডিও ফোল্ডার থেকে ভিডিও লোড করা
+            document.getElementById('videoPlayer').load(); // ভিডিও লোড করা
+        }
+    </script>
+</body>
+</html>
